@@ -16,7 +16,7 @@
     aside,
     article,
     footer {
-      background: #d8d6d6;
+      background: #c0c0c0;
       padding: 0.5em;
     }
     
@@ -42,3 +42,78 @@
       align-items: center;
       justify-content: center;
     }
+  /*FIM da formatação do GRID*/
+  
+  /*INÍCIO da formatação do HEADER*/
+    
+  /*FIM da formatação do HEADER*/
+  
+  /*INÍCIO da formatação do MENU*/
+    .menu {
+      padding: 0;
+    }
+    .menu ul {
+      list-style: none; /*para tirar as "bolinhas" da lista*/
+      display: flex; /*para deixar o menu na horizontal*/
+    }
+    .menu ul li {
+      background-color: rgb(255, 255, 255); /*cor de fundo do menu*/
+      padding: 10px 25px; /*espaçamento entre as divisórias do menu*/
+      border: 0.1px solid rgb(160, 158, 158); /*borda do menu*/
+  
+    }
+    .menu ul li a {
+      text-decoration: none; /*para tirar o traçado em baixo do link*/
+      color: #333; /*cor do link*/
+      font-family: Arial, Helvetica, sans-serif; /*fonte da letra*/
+      font-size: 15px; /*tamanho da letra*/
+    }
+    .menu ul li:hover {
+      /*formatação para quando o mouse estiver sobre o menu*/
+      background-color: cadetblue; /*cor de fundo do menu*/
+    }
+  /*FIM da formatação do MENU*/
+  
+  
+  /*INÍCIO da formatação da BARRA LATERAL*/
+    .sidebar-left {
+      background-color: #523737;
+      justify-content: left; /*para a tabela ficar alinhada a esquerda*/
+    }
+    .barra-lateral {
+      margin-left: 65px; /*margem da esquerda da tabela principal*/
+    }
+    .barra-lateral ul li{
+      margin: 10px 0; /*margem de cima e de baixo da lista principal*/
+    }
+    .barra-lateral ul li a{
+      text-decoration: none; /*tirar sublinhado do link*/
+      color: #333; /*cor da letra*/
+      font-size: 25px; /*tamanho da letra da tabela*/
+    }
+    .barra-lateral ul li a:hover{
+      color: blue; /*cor do texto da lista pricipal quando o mouse passar por cima*/
+    }
+    .barra-lateral ul li ul {
+      margin: 20px 35px; /* margem da tabela contida na tabela principal*/
+  
+    }
+    .barra-lateral ul li ul li {
+      font-size: 20px; /*tamanho da letra da tabela contida na tabela principal*/
+    }
+    .barra-lateral ul li ul li a:hover{
+      color: red; /*cor do texto da lista secundária quando o mouse passar por cima*/
+    }
+  
+  
+  /*FIM da formatação da BARRA LATERAL/
+  
+  
+  /INÍCIO da formatação do ARTICLE/
+    
+  /FIM da formatação do ARTICLE/
+  
+  
+  /INÍCIO da formatação do FOOTER/
+    
+  /FIM da formatação do FOOTER/*
