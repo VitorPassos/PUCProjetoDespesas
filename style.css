@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*INÍCIO da formatação do GRID*/
+  .grid {
+      display: grid;
+      grid-template-columns: 350px 350px 350px;
+      grid-template-rows: auto;
+      grid-gap: 1em;
+    }
+    
+    header,
+    nav,
+    aside,
+    article,
+    footer {
+      background: #d8d6d6;
+      padding: 0.5em;
+    }
+    
+    header, footer, nav {
+      grid-column: 1 / 4;
+    }
+    aside {
+      grid-column: 1 / 2;
+    }
+    article {
+      grid-column: 2 / 4;
+    }
+    
+  
+    body {
+      margin: 0 auto;
+      width: 1050px;
+      padding: 1em 0;
+    }
+    
+    .grid > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
