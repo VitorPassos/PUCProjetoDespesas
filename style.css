@@ -11,12 +11,12 @@
       grid-gap: 1em;
     }
     
-    header,
-    nav,
-    aside,
-    article,
-    footer {
-      background: blue;
+    .coluna-header,
+    .coluna-nav,
+    .coluna-aside,
+    .coluna-article,
+    .coluna-footer {
+      background: rgb(200, 200, 204);
       padding: 0.5em;
     }
     
@@ -44,9 +44,11 @@
     }
   /*FIM da formatação do GRID*/
   
+
   /*INÍCIO da formatação do HEADER*/
     
   /*FIM da formatação do HEADER*/
+  
   
   /*INÍCIO da formatação do MENU*/
     .menu {
@@ -76,12 +78,14 @@
   
   
   /*INÍCIO da formatação da BARRA LATERAL*/
-    .sidebar-left {
-      background-color: #523737;
-      justify-content: left; /*para a tabela ficar alinhada a esquerda*/
-    }
+    
     .barra-lateral {
-      margin-left: 65px; /*margem da esquerda da tabela principal*/
+      
+      width: 90%;
+    }
+    .barra-lateral ul{
+      list-style: none; /*para tirar as bolinhas da lista*/
+      margin-left: 25px;
     }
     .barra-lateral ul li{
       margin: 10px 0; /*margem de cima e de baixo da lista principal*/
@@ -106,14 +110,16 @@
     }
   
   
-  /*FIM da formatação da BARRA LATERAL/
+  /*FIM da formatação da BARRA LATERAL*/
   
   
-  /INÍCIO da formatação do ARTICLE/
+  /*INÍCIO da formatação do ARTICLE*/
+    article img{
+      width: 100%;
+    }
+  /*FIM da formatação do ARTICLE*/
+  
+  
+  /*INÍCIO da formatação do FOOTER*/
     
-  /FIM da formatação do ARTICLE/
-  
-  
-  /INÍCIO da formatação do FOOTER/
-    
-  /FIM da formatação do FOOTER/*
+  /*FIM da formatação do FOOTER/*
