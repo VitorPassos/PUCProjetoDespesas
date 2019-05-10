@@ -1,125 +1,190 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*INÍCIO da formatação do GRID*/
-  .grid {
-      display: grid;
-      grid-template-columns: 350px 350px 350px;
-      grid-template-rows: auto;
-      grid-gap: 1em;
-    }
-    
-    .coluna-header,
-    .coluna-nav,
-    .coluna-aside,
-    .coluna-article,
-    .coluna-footer {
-      background: rgb(200, 200, 204);
-      padding: 0.5em;
-    }
-    
-    header, footer, nav {
-      grid-column: 1 / 4;
-    }
-    aside {
-      grid-column: 1 / 2;
-    }
-    article {
-      grid-column: 2 / 4;
-    }
-    
-  
-    body {
-      margin: 0 auto;
-      width: 1050px;
-      padding: 1em 0;
-    }
-    
-    .grid > * {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  /*FIM da formatação do GRID*/
-  
+  margin: 0;
+  padding: 0;
+}
 
-  /*INÍCIO da formatação do HEADER*/
-    
-  /*FIM da formatação do HEADER*/
+/*INÍCIO da formatação do GRID*/
+.grid {
+    display: grid;
+    grid-template-columns: 12,5% 12,5% 12,5% 12,5% 12,5% 12,5% 12,5% 12,5%;
+    grid-template-rows: auto auto 300px 400px auto;
+    grid-gap: 1em;
+  }
+ 
+  .coluna-header,
+  .escolha-mes,
+  .coluna-grafico1,
+  .coluna-grafico2,
+  .coluna-grafico3,
+  .coluna-footer {
+ 
+    padding: 0.5em;
+   
+   
+  }
+ 
+  header, footer {
+    grid-column: 1 / 9;
+  }
+  .escolha-mes {
+    grid-column: 1/9;
+  }
+  .coluna-grafico1 {
+    grid-column: 2 / 4;
+  }
+  .coluna-grafico2 {
+    grid-column: 4 / 8;
+  }
+  .coluna-grafico3 {
+    grid-column: 2/8;
+  }
+ 
+
+  body {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding: 1em 0;
+   
+   
+   
+   
+  }
+ 
+  .grid > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+   
+  }
+/*FIM da formatação do GRID*/
+
+
+/*INÍCIO da formatação do HEADER*/
+header {
+  height: 120px;
+  margin-bottom: 20px;
+  background-color: #040054;
+  color: white;
+}
+.menu{
+ margin-right:auto;
+ margin-top: 85px;
+  width: 155px;      /* bloco do cadastrar dados + imagem de 3 linhas */
+  height: 32px;
+ 
+}
+.cadastrar{
+ 
+  margin-left: 39px;
+  margin-top: -30px;
+  font-family: calibri; /* bloco das palavras separando a imagem do texto */
+  font-weight: bold;
+  font-size: 15px;
+}
+.mulher{
+margin-top: -10px;
+margin-right: 550px;
+
+}
+.mulherarredondada{
+  border-radius: 30px;
+ margin-left: 25px;
   
-  
-  /*INÍCIO da formatação do MENU*/
-    .menu {
-      padding: 0;
-    }
-    .menu ul {
-      list-style: none; /*para tirar as "bolinhas" da lista*/
-      display: flex; /*para deixar o menu na horizontal*/
-    }
-    .menu ul li {
-      background-color: rgb(255, 255, 255); /*cor de fundo do menu*/
-      padding: 10px 25px; /*espaçamento entre as divisórias do menu*/
-      border: 0.1px solid rgb(160, 158, 158); /*borda do menu*/
-  
-    }
-    .menu ul li a {
-      text-decoration: none; /*para tirar o traçado em baixo do link*/
-      color: #333; /*cor do link*/
-      font-family: Arial, Helvetica, sans-serif; /*fonte da letra*/
-      font-size: 15px; /*tamanho da letra*/
-    }
-    .menu ul li:hover {
-      /*formatação para quando o mouse estiver sobre o menu*/
-      background-color: cadetblue; /*cor de fundo do menu*/
-    }
-  /*FIM da formatação do MENU*/
-  
-  
-  /*INÍCIO da formatação da BARRA LATERAL*/
-    
-    .barra-lateral {
-      
-      width: 90%;
-    }
-    .barra-lateral ul{
-      list-style: none; /*para tirar as bolinhas da lista*/
-      margin-left: 25px;
-    }
-    .barra-lateral ul li{
-      margin: 10px 0; /*margem de cima e de baixo da lista principal*/
-    }
-    .barra-lateral ul li a{
-      text-decoration: none; /*tirar sublinhado do link*/
-      color: #333; /*cor da letra*/
-      font-size: 25px; /*tamanho da letra da tabela*/
-    }
-    .barra-lateral ul li a:hover{
-      color: blue; /*cor do texto da lista pricipal quando o mouse passar por cima*/
-    }
-    .barra-lateral ul li ul {
-      margin: 20px 35px; /* margem da tabela contida na tabela principal*/
-  
-    }
-    .barra-lateral ul li ul li {
-      font-size: 20px; /*tamanho da letra da tabela contida na tabela principal*/
-    }
-    .barra-lateral ul li ul li a:hover{
-      color: red; /*cor do texto da lista secundária quando o mouse passar por cima*/
-    }
-  
-  
-  /*FIM da formatação da BARRA LATERAL*/
-  
-  
-  /*INÍCIO da formatação do ARTICLE*/
-    article img{
-      width: 100%;
-    }
-  /*FIM da formatação do ARTICLE*/
-  
-  
-  /*INÍCIO da formatação do FOOTER*/
-    
-  /*FIM da formatação do FOOTER/*
+}
+.nomeusuario{
+ font-family: calibri;
+ font-weight: bold;
+  text-align: center;
+}
+.logo{
+  padding-top: -50px;
+}
+.bloco img{
+  padding-right: 20px;
+}
+.bloco{
+
+  height: 100px;
+}
+.ECONOMIZE{
+float: left;
+padding-right: 20px;
+font-size: 30px;
+padding-top: 2px;
+font-family: calibri;
+font-weight: bold;
+}
+.ajuda{
+  font-family: calibri;
+  margin-top: -27px;
+}
+.traço2{
+margin-left: 50px;
+margin-top: -18px;
+width: 10px;
+}
+.quemsomos{
+  font-family: calibri;
+  margin-left: 60px;
+  margin-top: -26px;
+}
+
+
+/*FIM da formatação do HEADER*/
+
+
+/*INÍCIO da formatação da ESCOLHA DO MES */
+.escolha-mes {
+ 
+  width: 10%;
+  margin: auto;
+  margin-bottom: 12px;
+  border: 3px solid #040054;
+}
+/*FIM da formatação da ESCOLHA DO MES*/
+
+
+/*INÍCIO da formatação do GRÁFICO 1*/
+  .coluna-grafico1 img {
+    width: 50%;
+  }
+
+  .coluna-grafico1 {
+    background-color: rgb(211, 206, 206);
+   
+  }
+/*FIM da formatação do GRÁFICO 1*/
+
+
+
+/*INÍCIO da formatação do GRÁFICO 2*/
+.coluna-grafico2 img {
+  width: 25%;
+}
+.coluna-grafico3 {
+  background-color: rgb(211, 206, 206)
+}
+/*FIM da formatação do GRÁFICO 2*/
+
+
+
+/*INÍCIO da formatação do GRÁFICO 3*/
+.coluna-grafico3 img {
+width: 25%;
+}
+.coluna-grafico2 {
+background-color: rgb(211, 206, 206)
+}
+/*FIM da formatação do GRÁFICO 3*/
+
+
+
+/*INÍCIO da formatação do FOOTER*/
+  .coluna-footer {
+  background-color: #040054;
+  color: white;
+  height: 50px;
+  }
+/*FIM da formatação do FOOTER/*
