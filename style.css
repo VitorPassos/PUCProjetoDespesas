@@ -1,125 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
+header {
+    display: flex;
+    background-color: RGB(5,0,85);
+    justify-content: space-around;
+}
+.usuario {
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    flex-grow: 1;
+}
+.logo {
+    color: white;
+    line-height: 80px;
+    flex-grow: 0.125;
+}
+.calen {
+    display: flex;
+    line-height: 60px;
+    justify-content: center;
+}
+article {
+    display: flex;
+    justify-content: space-around;
+}
+.mulher{
+  margin-top: -10px;
+  margin-right: 550px;
+  
+  }
+  .mulherarredondada{
+    border-radius: 30px;
+   margin-left: 25px;
+    
+  }
+  .nomeusuario{
+   font-family: calibri;
+   font-weight: bold;
+    text-align: center;
+  }
+
+/* Parte interna do menu lateral */
+.sidebar {
+    height: 100%; /* % de ocupação vertical do menu */
+    width: 0; /* mantenha largura 0 aqui. mude width em javascript */
+    position: fixed; /* mantem a barra no lugar */
+    z-index: 1; /* mantem a barra no topo */
+    top: 0;
+    left: 0;
+    background-color: RGB(5,0,30);
+    overflow-x: hidden; /* desabilita o scrolling da barra */
+    padding-top: 60px; /* posiciona o conteudo a 60px do topo */
+    transition: 0.5s; /* 0.5 segundos para a barra se mostrar completamente */
   }
   
-  /*INÍCIO da formatação do GRID*/
-  .grid {
-      display: grid;
-      grid-template-columns: 350px 350px 350px;
-      grid-template-rows: auto;
-      grid-gap: 1em;
-    }
-    
-    .coluna-header,
-    .coluna-nav,
-    .coluna-aside,
-    .coluna-article,
-    .coluna-footer {
-      background: rgb(200, 200, 204);
-      padding: 0.5em;
-    }
-    
-    header, footer, nav {
-      grid-column: 1 / 4;
-    }
-    aside {
-      grid-column: 1 / 2;
-    }
-    article {
-      grid-column: 2 / 4;
-    }
-    
+  /* Conteudo da barra */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
   
-    body {
-      margin: 0 auto;
-      width: 1050px;
-      padding: 1em 0;
-    }
-    
-    .grid > * {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  /*FIM da formatação do GRID*/
+  /* Cor dos links de navegacao quando passar o mouse */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
   
-
-  /*INÍCIO da formatação do HEADER*/
-    
-  /*FIM da formatação do HEADER*/
+  /* Posição e estilo do botão de fechar da barra */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
   
+  /* Opções do botão para abrir a barra */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: RGB(5,0,30);
+    color: white;
+    padding: 10px 15px;
+    border: 1;
+  }
   
-  /*INÍCIO da formatação do MENU*/
-    .menu {
-      padding: 0;
-    }
-    .menu ul {
-      list-style: none; /*para tirar as "bolinhas" da lista*/
-      display: flex; /*para deixar o menu na horizontal*/
-    }
-    .menu ul li {
-      background-color: rgb(255, 255, 255); /*cor de fundo do menu*/
-      padding: 10px 25px; /*espaçamento entre as divisórias do menu*/
-      border: 0.1px solid rgb(160, 158, 158); /*borda do menu*/
+  .openbtn:hover {
+    background-color: #444;
+  }
   
-    }
-    .menu ul li a {
-      text-decoration: none; /*para tirar o traçado em baixo do link*/
-      color: #333; /*cor do link*/
-      font-family: Arial, Helvetica, sans-serif; /*fonte da letra*/
-      font-size: 15px; /*tamanho da letra*/
-    }
-    .menu ul li:hover {
-      /*formatação para quando o mouse estiver sobre o menu*/
-      background-color: cadetblue; /*cor de fundo do menu*/
-    }
-  /*FIM da formatação do MENU*/
-  
-  
-  /*INÍCIO da formatação da BARRA LATERAL*/
-    
-    .barra-lateral {
-      
-      width: 90%;
-    }
-    .barra-lateral ul{
-      list-style: none; /*para tirar as bolinhas da lista*/
-      margin-left: 25px;
-    }
-    .barra-lateral ul li{
-      margin: 10px 0; /*margem de cima e de baixo da lista principal*/
-    }
-    .barra-lateral ul li a{
-      text-decoration: none; /*tirar sublinhado do link*/
-      color: #333; /*cor da letra*/
-      font-size: 25px; /*tamanho da letra da tabela*/
-    }
-    .barra-lateral ul li a:hover{
-      color: blue; /*cor do texto da lista pricipal quando o mouse passar por cima*/
-    }
-    .barra-lateral ul li ul {
-      margin: 20px 35px; /* margem da tabela contida na tabela principal*/
-  
-    }
-    .barra-lateral ul li ul li {
-      font-size: 20px; /*tamanho da letra da tabela contida na tabela principal*/
-    }
-    .barra-lateral ul li ul li a:hover{
-      color: red; /*cor do texto da lista secundária quando o mouse passar por cima*/
-    }
-  
-  
-  /*FIM da formatação da BARRA LATERAL*/
-  
-  
-  /*INÍCIO da formatação do ARTICLE*/
-    article img{
-      width: 100%;
-    }
-  /*FIM da formatação do ARTICLE*/
-  
-  
-  /*INÍCIO da formatação do FOOTER*/
-    
-  /*FIM da formatação do FOOTER/*
+  /* Usado para empurrar elementos quando a barra se expande */
+  #main {
+    transition: margin-left .5s; /* efeito de transição */
+    padding: 20px;
+  }
