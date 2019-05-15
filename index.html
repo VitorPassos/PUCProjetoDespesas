@@ -1,64 +1,114 @@
 <!DOCTYPE html>
-<html lang=pt-br>
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Economize</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Economize</title>
+
+    <!--INICIO JS das páginas do tipo modal-->
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="core.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+
+            if ($.cookie('modal') !== undefined) {
+
+                $('#modal').css('display', 'none');
+            }
+
+            $('.pagina').click(function () {
+                $('#modal').fadeIn(1000);
+                var url = $(this).attr('href');
+                $('.modal-box-conteudo').load("paginas-modais.html " + url);
+            });
+
+            $('.fechar, #modal').click(function (event) {
+                if (event.target !== this) {
+                    return;
+                }
+                $('#modal').fadeOut(500);
+                $.cookie('modal', '1', { expires: 7 });
+
+            });
+        });
+    </script>
+    <!-- FIM JS das páginas do tipo modal-->
+
 </head>
 
 <body>
-  <div class="grid">
-    <!--HEADER-->
-    <header class="coluna-header">
-      ECONOMIZE + LOGO
+    <header class="row header">
+        <div class="column column-12">
+            <div class="row">
+                <div class="column column-4">
+
+                    <!--inicio MENU-->
+                    <div id="mySidebar" class="sidebar">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#pagina1" class="pagina">Receitas </a>
+                        <a href="#pagina2" class="pagina">Despesas </a>
+                        <a href="#pagina3" class="pagina">Metas </a>
+
+                        <div id="modal">
+                            <div class="modal-box">
+                                <div class="modal-box-conteudo"></div>
+                                <div class="fechar">X</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main">
+                        <button class="openbtn" onclick="openNav()">&#9776; Cadastrar dados</button>
+                    </div>
+                    <!--fim MENU-->
+
+                </div>
+                <div class="column column-4">
+                    <div class="foto-usuario">.</div>
+                    <div class="nome-usuario">Nome do Usuário</div>
+                </div>
+                <div class="column column-4 logo-quemsomos">
+                    <div class="logo">
+                        <p>Economize |</p> <img src="logo.png" alt="" style="width: 40px">
+                    </div>
+
+                    <div class="quem-somos">
+                        <p><a href="">QUEM SOMOS </a>
+                            <p>|</p> <a href=""> AJUDA</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!--MENU-->
-    <nav class="menu coluna-nav">
-      <ul>
-        <li><a href="index.html">MENU</a></li>
-        <li><a href="">MENU</a></li>
-        <li><a href="">MENU</a></li>
-        <li><a href="">MENU</a></li>
-        <li><a href="">MENU</a></li>
-        <li><a href="">MENU</a></li>
-        <li><a href="">MENU</a></li>
-      </ul>
-    </nav>
 
-    <!--BARRA LATERAL-->
-    <aside class="coluna-aside">
-      <nav class="barra-lateral">
-        <ul>
-          <li><a href="">Criar dados</a></li>
-          <li>
-            <a href="">Categorias
-              <ul>
-                <li><a href="">LI1</a></li>
-                <li><a href="">LI2</a></li>
-              </ul>
-            </a>
-          </li>
-          <li><a href="">Metas</a></li>
-          <li><a href="">xyz</a></li>
-          <li><a href="">xyz</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <section class="row">
+        <div class="column column-12">
+            <form><input type="month" required /></form>
+        </div>
+    </section>
 
-    <!--GRÁFICO-->
-    <article class="coluna-article">
-      <img src="exemplo_gráfico.jpg" alt="">
-    </article>
+    <section class="row">
+        <div class="column column-1"></div>
+        <div class="column column-4 grafico1"><img src="exemplo_gráfico.jpg" alt=""></div>
+        <div class="column column-6 grafico2"><img src="exemplo_gráfico.jpg" alt=""></div>
+        <div class="column column-1"></div>
+    </section>
+    <section class="row">
+        <div class="column column-1"></div>
+        <div class="column column-10 grafico3"><img src="exemplo_gráfico.jpg" alt=""></div>
+        <div class="column column-1"></div>
+    </section>
 
-    <!--RODAPÉ-->
-    <footer class="coluna-footer">
-      Footer
+    <footer class="row">
+        <div class="column column-12 footer">© Copyright 2019 | ECONOMIZE</div>
     </footer>
-  </div>
+
 </body>
 
 </html>

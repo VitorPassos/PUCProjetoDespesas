@@ -1,125 +1,357 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*INÍCIO da formatação do GRID*/
-  .grid {
-      display: grid;
-      grid-template-columns: 350px 350px 350px;
-      grid-template-rows: auto;
-      grid-gap: 1em;
-    }
-    
-    .coluna-header,
-    .coluna-nav,
-    .coluna-aside,
-    .coluna-article,
-    .coluna-footer {
-      background: rgb(200, 200, 204);
-      padding: 0.5em;
-    }
-    
-    header, footer, nav {
-      grid-column: 1 / 4;
-    }
-    aside {
-      grid-column: 1 / 2;
-    }
-    article {
-      grid-column: 2 / 4;
-    }
-    
-  
-    body {
-      margin: 0 auto;
-      width: 1050px;
-      padding: 1em 0;
-    }
-    
-    .grid > * {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  /*FIM da formatação do GRID*/
-  
+/*------------------------------*\
+    INICIO DO GRID >> Cuidado p/ não desconfigurar
+\*------------------------------*/
 
-  /*INÍCIO da formatação do HEADER*/
+.row, 
+.column {
+    box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+.column + .column {
+    margin-left: 1.6%;
+}
+
+.column-1 {
+    width: 6.86666666667%;
+}
+
+.column-2 {
+    width: 15.3333333333%;
+}
+
+.column-3 {
+    width: 23.8%;
+}
+
+.column-4 {
+    width: 32.2666666667%;
+}
+
+.column-5 {
+    width: 40.7333333333%;
+}
+
+.column-6 {
+    width: 49.2%;
+}
+
+.column-7 {
+    width: 57.6666666667%;
+}
+
+.column-8 {
+    width: 66.1333333333%;
+}
+
+.column-9 {
+    width: 74.6%;
+}
+
+.column-10 {
+    width: 83.0666666667%;
+}
+
+.column-11 {
+    width: 91.5333333333%;
+}
+
+.column-12 {
+    width: 100%;
+    margin-left: 0;
+}
+
+/*-------------------------*/
+
+.column {
+    border-radius: 4px;
+    padding: 5px;
+    min-height: 30px;
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 10px;
     
-  /*FIM da formatação do HEADER*/
-  
-  
-  /*INÍCIO da formatação do MENU*/
-    .menu {
-      padding: 0;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.column .column {
+    border-color: none;
+}
+
+/*------------------------------*\
+    FIM DO GRID
+\*------------------------------*/
+
+
+/*INICIO da formatação do HEADER*/
+    .header {
+        background-color: #050055;
+        color: white;
     }
-    .menu ul {
-      list-style: none; /*para tirar as "bolinhas" da lista*/
-      display: flex; /*para deixar o menu na horizontal*/
+    div .foto-usuario {
+        margin: 2px auto 5px auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: white;
     }
-    .menu ul li {
-      background-color: rgb(255, 255, 255); /*cor de fundo do menu*/
-      padding: 10px 25px; /*espaçamento entre as divisórias do menu*/
-      border: 0.1px solid rgb(160, 158, 158); /*borda do menu*/
-  
+    .nome-usuario {
+        margin-top: 20px;
+        color: white;
+        font-family: sans-serif;
     }
-    .menu ul li a {
-      text-decoration: none; /*para tirar o traçado em baixo do link*/
-      color: #333; /*cor do link*/
-      font-family: Arial, Helvetica, sans-serif; /*fonte da letra*/
-      font-size: 15px; /*tamanho da letra*/
+    .logo-quemsomos {
+        text-align: end;
+       
     }
-    .menu ul li:hover {
-      /*formatação para quando o mouse estiver sobre o menu*/
-      background-color: cadetblue; /*cor de fundo do menu*/
+    .logo {
+        margin-left: 20px;
     }
-  /*FIM da formatação do MENU*/
-  
-  
-  /*INÍCIO da formatação da BARRA LATERAL*/
-    
-    .barra-lateral {
-      
-      width: 90%;
+    .logo p {
+        font-size: 30px;
+        font-family: sans-serif;
+        display: inline;
     }
-    .barra-lateral ul{
-      list-style: none; /*para tirar as bolinhas da lista*/
-      margin-left: 25px;
+    .logo img {
+        margin-left: 10px;
     }
-    .barra-lateral ul li{
-      margin: 10px 0; /*margem de cima e de baixo da lista principal*/
+    .quem-somos {
+        margin-top: 20px;
+        margin-right: 40px;
     }
-    .barra-lateral ul li a{
-      text-decoration: none; /*tirar sublinhado do link*/
-      color: #333; /*cor da letra*/
-      font-size: 25px; /*tamanho da letra da tabela*/
+    .quem-somos a {
+        color: white;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 13px;
     }
-    .barra-lateral ul li a:hover{
-      color: blue; /*cor do texto da lista pricipal quando o mouse passar por cima*/
+    .quem-somos p {
+        display: inline;
     }
-    .barra-lateral ul li ul {
-      margin: 20px 35px; /* margem da tabela contida na tabela principal*/
-  
-    }
-    .barra-lateral ul li ul li {
-      font-size: 20px; /*tamanho da letra da tabela contida na tabela principal*/
-    }
-    .barra-lateral ul li ul li a:hover{
-      color: red; /*cor do texto da lista secundária quando o mouse passar por cima*/
-    }
-  
-  
-  /*FIM da formatação da BARRA LATERAL*/
-  
-  
-  /*INÍCIO da formatação do ARTICLE*/
-    article img{
-      width: 100%;
-    }
-  /*FIM da formatação do ARTICLE*/
-  
-  
-  /*INÍCIO da formatação do FOOTER*/
-    
-  /*FIM da formatação do FOOTER/*
+/*FIM da formatação do HEADER*/
+
+
+/*INICIO da formatação do MENU*/
+        /* Parte interna do menu lateral */
+        .sidebar {
+            height: 100%; /* % de ocupação vertical do menu */
+            width: 0; /* mantenha largura 0 aqui. mude width em javascript */
+            position: fixed; /* mantem a barra no lugar */
+            z-index: 1; /* mantem a barra no topo */
+            top: 0;
+            left: 0;
+            background-color: RGB(5,0,30);
+            overflow-x: hidden; /* desabilita o scrolling da barra */
+            padding-top: 60px; /* posiciona o conteudo a 60px do topo */
+            transition: 0.5s; /* 0.5 segundos para a barra se mostrar completamente */
+        }
+        
+        /* Conteudo da barra */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        /* Cor dos links de navegacao quando passar o mouse */
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        
+        /* Posição e estilo do botão de fechar da barra */
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        /* Opções do botão para abrir a barra */
+        .openbtn {
+            font-size: 16px;
+            cursor: pointer;
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            padding: 10px 0;
+            border: none;
+            margin-left: -290px;
+            font-family: sans-serif;
+        }
+        
+        .openbtn:hover {
+            transition:.1s;
+            text-decoration: underline;
+        }
+        
+        /* Usado para empurrar elementos quando a barra se expande */
+        #main {
+            transition: margin-left .5s; /* efeito de transição */
+            padding: 20px 0 5px 0px;
+        }
+/*FIM da formatação do MENU*/
+
+
+/*INICIO formatação dos GRAFICOS*/
+        .grafico1 img{
+            display: block;
+            max-width: 100%;
+            margin: auto;    
+        }
+        .grafico2 img{
+            display: block;
+            max-width: 100%;
+            margin: auto;    
+
+        }
+        .grafico3 img {
+            display: block;
+            max-width: 100%;
+            margin: auto;    
+
+        }
+/*INICIO formatação dos GRAFICOS*/
+
+
+
+
+/*INICIO formatação do FOOTER*/
+        .footer {
+            background-color: #050055;
+            height: 50px;
+            color: white;
+            font-size: 12px;
+            padding-top: 15px;
+            font-family: sans-serif;
+        }
+/*FIM formatação do FOOTER*/
+
+
+/*INICO DO CSS DAS PÁGINAS DO TIPO MODAL*/
+
+#modal{
+    background:rgba(0,0,0, 0.5);
+    width:100%; 
+    height:100%;
+    position:fixed;
+    left:0; 
+    top:0; } 
+.modal-box{
+     background:#FFF; 
+     width:50%; 
+     height:600px; 
+     position:absolute; 
+     left:50%; 
+     top:50%; 
+     margin-left:-25%; 
+     margin-top:-300px;}
+.fechar{ 
+    padding:5px 10px;
+    border:1px solid #CCC; 
+    position:absolute; 
+    right:3px; 
+    top:3px; 
+    border-radius:7px; 
+    color:#CCC; 
+    cursor:pointer;}
+.fechar:hover{
+    color:#666; 
+    border-color:#666;}
+.modal-box-conteudo {
+    color: #333;
+    height: 100%;
+}
+.modal-box-conteudo h1 {
+    font-family: sans-serif;
+    font-family: 8px;
+    padding-top: 10px;
+}
+.css-comum-pm {
+    width: 95%;
+    height: 93%;
+    margin: auto;
+
+}
+#pagina1 {
+}
+
+#pagina2 {
+ }
+
+ /*css p/ formulario*/
+ .linha-formulario {
+     margin: 6px;
+     
+ }
+ .nome-categoria {
+     font-family: sans-serif;
+     display: inline;
+ }
+     
+.inputs {
+padding-top: 20px;
+}     
+
+ .valor-categoria {
+     border: 1px solid #868383;
+     text-align: end;
+     left: 210px;
+     width: 80px;
+     cursor: pointer;
+     padding-right: 5px;
+     
+     
+ }
+ .botao-calcular {
+     background-color: transparent;
+     font-family: sans-serif;
+     font-size: 15px;
+     color:#050055;
+     border-radius: 5px;
+     border: none;
+     width: 90px;
+     margin-top: 20px;
+     cursor: pointer;
+     margin-bottom: 10px;
+     text-decoration: underline;
+ }
+ .botao-calcular:hover {
+    color:#302894;
+}
+ .resultado {
+     background-color: transparent;
+     text-align: center;
+     width: 100%;
+     color: #050055;
+     font-weight: 100px;
+     display: block;
+     margin: auto;
+     font-size: 40px;
+     height: 50px;
+     
+ }
+
+/*FIM DO CSS DAS PÁGINAS DO TIPO MODAL*/
