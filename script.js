@@ -14,6 +14,7 @@ function closeNav() {
 
 function soma() 
 {
-form.resultado.value = (form.campo1.value*1) + (form.campo2.value*1) + (form.campo3.value*1)
+form.resultado.value = (form.campo1.value*1) + (form.campo2.value*1) + (form.campo3.value*1) + (form.campo4.value*1)
++ (form.campo5.value*1) + (form.campo6.value*1)
 }
 
