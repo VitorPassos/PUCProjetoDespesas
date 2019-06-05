@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/despesas-receitas.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Economize</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <div class="cabecalhoint">
+                <nav class="nav">
+                    <div>.</div>
+                    <ul>
+                        <li><a href="paginaprincipal.html"> HOME</a></li>
+                        <li>SOBRE NÓS</li>
+                        <li>NOTICIAS</li>
+                        <li>SUPORTE</li>
+                    </ul>
+                </nav>
+                <div class="usuario">
+                    <img class="perfil" src="/imagens/perfil.jpg" width="50px" height="40px">
+                    <div class="nome">Bem vindo, Usuário</div>
+                    <div class="logout">logout</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main>
+
+        <body onload="init()">
+            <h1>Cadastro de Despesas </h1>
+            <div class="container">
+                <div class="row">
+                    <div id="msg" class="col-sm-10 offset-sm-1 ">
+                        <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+                    </div>
+                </div>
+
+                <form id="form-contato">
+                    <input type="hidden" id="inputId">
+                    <div class="form-group row">
+                        <div class="col-sm-8">
+                            <label for="inputCategoria">Categoria (*)</label>
+                            <select type="text" class="form-control" id="inputCategoria" ;>
+                                <option value=""></option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Telefonia">Telefonia</option>
+                                <option value="Trasporte">Transporte</option>
+                                <option value="Vestuário">Vestuário</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-5">
+                            <label for="inputValor">Valor (*)</label>
+                            <input type="text" class="form-control" id="inputValor" required
+                                placeholder="informe o valor">
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="inputMes">Mês/ano (*)</label>
+                            <select type="text" class="form-control" id="inputMes">
+                                <option value=""></option>
+                                <option value="Jan/2019">Jan/2019</option>
+                                <option value="Fev/2019">Fev/2019</option>
+                                <option value="Mar/2019">Mar/2019</option>
+                                <option value="Abr/2019">Abr/2019</option>
+                                <option value="Mai/2019">Mai/2019</option>
+                                <option value="Jun/2019">Jun/2019</option>
+                                <option value="Jul/2019">Jul/2019</option>
+                                <option value="Ago/2019">Ago/2019</option>
+                                <option value="Set/2019">Set/2019</option>
+                                <option value="Out/2019">Out/2019</option>
+                                <option value="Nov/2019">Nov/2019</option>
+                                <option value="Dez/2019">Dez/2019</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <small>(*) Campos obrigatórios</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                            <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                            <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                            <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="grid-contatos" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Valor</th>
+                                    <th scope="col">Mês/ano</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-contatos">
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script src="/jss/fakeDespesas.js"></script>
+            <script>
+                function exibeContatos() {
+                    // Remove todas as linhas do corpo da tabela
+                    $("#table-contatos").html("");
+
+                    // Popula a tabela com os registros do banco de dados
+                    for (i = 0; i < db.data.length; i++) {
+                        let contato = db.data[i];
+/*UJNDEFINED*/            $("#table-contatos").append(`<tr><td scope="row">${contato.id}</td><td>${contato.categoria}</td><td>${contato.valor}</td><td>${contato.mes}</td></tr>`);
+                    }
+                }
+
+                function init() {
+                    // Adiciona funções para tratar os eventos 
+                    $("#btnInsert").click(function () {
+                        // Verfica se o formulário está preenchido corretamente
+                        if (!$('#form-contato')[0].checkValidity()) {
+                            displayMessage("Preencha o formulário corretamente.");
+                            return;
+                        }
+
+                        // Obtem os valores dos campos do formulário
+                        let campoCategoria = $("#inputCategoria").val();
+                        let campoValor = $("#inputValor").val();
+                        let campoMes = $('#inputMes').val();
+                        let contato = { categoria: campoCategoria, valor: campoValor, mes: campoMes };
+
+                        insertContato(contato);
+
+                        // Reexibe os contatos
+                        exibeContatos();
+
+                        // Limpa o formulario
+                        $("#form-contato")[0].reset();
+                    });
+
+                    // Intercepta o click do botão Alterar
+                    $("#btnUpdate").click(function () {
+                        // Obtem os valores dos campos do formulário
+                        let campoId = $("#inputId").val();
+                        if (campoId == "") {
+                            displayMessage("Selecione um contato para ser alterado.");
+                            return;
+                        }
+                        let campoCategoria = $("#inputCategoria").val();
+                        let campoValor = $("#inputValor").val();
+                        let campoMes = $("#inputMes").val();
+                        let contato = { categoria: campoCategoria, valor: campoValor, mes: campoMes };
+
+                        updateContato(parseInt(campoId), contato);
+
+                        // Reexibe os contatos
+                        exibeContatos();
+
+                        // Limpa o formulario
+                        $("#form-contato")[0].reset();
+                    });
+
+                    // Intercepta o click do botão Excluir
+                    $("#btnDelete").click(function () {
+                        let campoId = $("#inputId").val();
+                        if (campoId == "") {
+                            displayMessage("Selecione um contato a ser excluído.");
+                            return;
+                        }
+                        deleteContato(parseInt(campoId));
+
+                        // Reexibe os contatos
+                        exibeContatos();
+
+                        // Limpa o formulario
+                        $("#form-contato")[0].reset();
+                    });
+
+                    // Intercepta o click do botão Listar Contatos
+                    $("#btnClear").click(function () {
+                        $("#form-contato")[0].reset();
+                    });
+
+                    // Oculta a mensagem de aviso após alguns segundos
+                    $('#msg').bind("DOMSubtreeModified", function () {
+                        window.setTimeout(function () {
+                            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                                $(this).remove();
+                            });
+                        }, 5000);
+                    });
+
+                    // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+                    $("#grid-contatos").on("click", "tr", function (e) {
+                        let linhaContato = this;
+                        $("#inputId").val(linhaContato.childNodes[0].firstChild.nodeValue);
+                        $("#inputCategoria").val(linhaContato.childNodes[1].firstChild.nodeValue);
+                        $("#inputValor").val(linhaContato.childNodes[2].firstChild.nodeValue);
+                        $("#inputMes").val(linhaContato.childNodes[3].firstChild.nodeValue);
+                    });
+
+                    exibeContatos();
+                }
+
+            </script>
+        </body>
+    </main>
+
+
+
+
+</body>
+<footer>
+    <div class="footer">
+        <div class="footerint">Copyright (C) 2019 Economize<br>All rights reserved</div>
+    </div>
+</footer>
+
+</html>

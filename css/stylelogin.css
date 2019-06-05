@@ -1,0 +1,38 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeeeee;
+    font-family: helvetica;
+    color: #018259;
+}
+
+h1 { 
+    
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+form a {
+    color: #018259;
+    text-decoration: none;
+    padding: 15px;
+}
+
+form a:hover {
+    text-decoration: underline;
+    color: #018259;
+}
+
+fieldset {
+    font-size:14px;    
+    padding:5px;   
+    width:500px;    
+    line-height:1.8;    
+    margin: 0 auto;    
+   }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="/jss/fakeReceitas.js"></script>
+    <script>
+        var sHtml = '';
+        function loadData() {
+            receitas = receitasfake.dadosReceitas;
+            for (i = 0; i < receitas.length; i++) {
+                sHtml += `<p>Categoria: ${receitas[i].categoria} <br>
+                        Valor: ${receitas[i].valor}<br>
+                        Mes: ${receitas[i].mes}<br>`;
+            }
+            document.getElementById('tela').innerHTML = sHtml;
+        }
+
+    </script>
+</head>
+
+<body onload="loadData()">
+    <div id="tela"></div>
+</body>
+
+</html>

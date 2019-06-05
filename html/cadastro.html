@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Economize</title>
+
+    <style>
+        body {
+        background-color: #eeeeee;
+        font-family: helvetica;
+        color: #018259; 
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .sobrenome {
+        padding: 0 40px 0 0;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20PX;
+    }
+
+    .registro {
+        color: #018259; 
+        text-decoration: none;
+    }
+
+    .registro1 :hover {
+        text-align: center;
+        text-decoration: underline;
+        color: #018259;
+    }
+    fieldset {
+        font-size:14px;    
+        padding:5px;   
+        width:500px;    
+        line-height:1.8;   
+        margin: 0 auto;    
+ }
+    </style>
+
+</head>
+
+<body>
+    <h1>CADASTRO</h1>
+    <h4 class="registro1"><a href="index.html" class="registro">Clique aqui se já está cadastrado!</h4></a>
+    <fieldset>
+        <legend><b>CADASTRO</b></legend>
+        <form name="form" method="POST" onsubmit="return validacao();"></a>
+            <p>Nome: <input type="text" name="nome"></input></p>
+            <p class="sobrenome">Sobrenome: <input type="text" name="sobrenome"></input></p>
+            <p>E-mail: <input type="text" name="email"></input></p>
+            <p>Senha: <input type="password" name="senha"></input></p>
+            <p><input onclick="disparaAlerta()" type="button" name="registro" value="Registrar"></input></p>
+        </form>
+    </fieldset>
+
+    <script>
+        function disparaAlerta() {
+            alert('Registrado com Sucesso');
+            location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
