@@ -1,155 +1,193 @@
-anychart.onDocumentReady(function(){
+anychart.onDocumentReady(function () {
+    anychart.theme('lightProvence');
 
-  //INÍCIO DAS LISTAS JSON DE DADOS PARA O GRÁFICO
-  //PRIMEIRA LISTA = GASTOS DO MÊS ATUAL
-  var dadosT = [];
-  var dadosT2 = [];
-  /*     ["Casa", 3000 ],
-      ["Prestação do carro", 4200 ],
-      ["Filhos", 3200 ],
-      ["Plano de saúde", 2000 ] */
-  
-  /* var dadosPASS = [
-      ["Casa", 3000 ],
-      ["Prestação do carro", 4200 ],
-      ["Filhos", 3200 ],
-      ["Plano de saúde", 2000 ]
-    ]; */
-  
-  
-  // Monta a estrutura de dados a ser exibida no gráfico para a RECEITA
-  for (i = 0; i < receitas.dadosReceitas.length; i++) {
-    let mes = receitas.dadosReceitas[i].mes;  
-    let valor = parseFloat (receitas.dadosReceitas[i].valor);
-    if (mes=="Jan/2019")
-      mes=0;
-    if (mes=="Fev/2019")
-      mes=1;
-    if (mes=="Mar/2019")
-      mes=2;
-    if (mes=="Abr/2019")
-      mes=3;
-    if (mes=="Mai/2019")
-      mes=4;
-    if (mes=="Jun/2019")
-      mes=5;
-    if (mes=="Jul/2019")
-      mes=6;
-    if (mes=="Ago/2019")
-      mes=7;
-    if (mes=="Set/2019")
-      mes=8;
-    if (mes=="Out/2019")
-      mes=9;
-    if (mes=="Nov/2019")
-      mes=10;
-    if (mes=="Dez/2019")
-      mes=11;
+    var dadosT = {
+        title: 'Receita x Despesas',
+        header: ['#', 'Receita', 'Despesas'],
+        rows: [
+            ['Janeiro'],
+            ['Fevereiro'],
+            ['Março'],
+            ['Abril'],
+            ['Maio'],
+            ['Junho'],
+            ['Julho'],
+            ['Agosto'],
+            ['Setembro'],
+            ['Outubro'],
+            ['Novembro'],
+            ['Dezembro'],
+        ]
+    };
 
-    // Checa o mês atual
-    let d = new Date();
-    let monthcheck = d.getMonth();  
-  
-    // Se não tem nenhum valor, insere o primeiro objeto
-    if (mes==monthcheck)
-      if (dadosT.length == 0)
-          dadosT.push ({x: "Receita", value: valor});
-      else {
-        for (j=0; j < dadosT.length; j++) {
-            val = parseFloat (dadosT[j].value);
+    document.getElementById("grafico3_alt").style.display = "none";
+
+    //INÍCIO DO SCRIPT PRÓPRIO
+
+    // Percorre os dados de outro DB para encontrar valores
+    for (i = 0; i < receitas.dadosReceitas.length; i++) {
+        let mes = receitas.dadosReceitas[i].mes;
+        let valor = parseFloat(receitas.dadosReceitas[i].valor);
+
+        let x;
+        switch (mes) {
+            case "Jan/2019": x = 0; break;
+            case "Fev/2019": x = 1; break;
+            case "Mar/2019": x = 2; break;
+            case "Abr/2019": x = 3; break;
+            case "Mai/2019": x = 4; break;
+            case "Jun/2019": x = 5; break;
+            case "Jul/2019": x = 6; break;
+            case "Ago/2019": x = 7; break;
+            case "Set/2019": x = 8; break;
+            case "Out/2019": x = 9; break;
+            case "Nov/2019": x = 10; break;
+            case "Dez/2019": x = 11; break;
+
+            default:
+                break;
+        }
+        if (dadosT.rows[x].length == 1)
+            dadosT.rows[x].push(valor);
+        else {
+            for (j = 1; j < dadosT.rows[x].length; j++)
+                val = parseFloat(dadosT.rows[x][j]);
             val += valor;
-            dadosT[j].value = val;
-              
-          }
-  
-      }
-  }
-  
+            dadosT.rows[x][1] = val;
+        }
+    }
 
-  // Monta a estrutura de dados a ser exibida no gráfico para as DESPESAS
-  for (i = 0; i < db.data.length; i++) {
-    let mes = db.data[i].mes;
-    let valor = parseFloat (db.data[i].valor);
-    if (mes=="Jan/2019")
-      mes=0;
-    if (mes=="Fev/2019")
-      mes=1;
-    if (mes=="Mar/2019")
-      mes=2;
-    if (mes=="Abr/2019")
-      mes=3;
-    if (mes=="Mai/2019")
-      mes=4;
-    if (mes=="Jun/2019")
-      mes=5;
-    if (mes=="Jul/2019")
-      mes=6;
-    if (mes=="Ago/2019")
-      mes=7;
-    if (mes=="Set/2019")
-      mes=8;
-    if (mes=="Out/2019")
-      mes=9;
-    if (mes=="Nov/2019")
-      mes=10;
-    if (mes=="Dez/2019")
-      mes=11;
+    for (i = 0; i < db.data.length; i++) {
+        let mesD = (db.data[i].mes);
+        let valorD = parseFloat(db.data[i].valor);
 
-    // Checa o mês atual
-    let d = new Date();
-    let monthcheck = d.getMonth();  
-  
-    // Se não tem nenhum valor, insere o primeiro objeto
-    if (mes==monthcheck)
-      if (dadosT2.length == 0)
-          dadosT2.push ({x: "Despesas", value: valor});
-      else {
-        for (j=0; j < dadosT2.length; j++) {
-            val = parseFloat (dadosT2[j].value);
-            val += valor;
-            dadosT2[j].value = val;
-              
-          }
-  
-      }
-  }
+        let x;
+        switch (mesD) {
+            case "Jan/2019": x = 0; break;
+            case "Fev/2019": x = 1; break;
+            case "Mar/2019": x = 2; break;
+            case "Abr/2019": x = 3; break;
+            case "Mai/2019": x = 4; break;
+            case "Jun/2019": x = 5; break;
+            case "Jul/2019": x = 6; break;
+            case "Ago/2019": x = 7; break;
+            case "Set/2019": x = 8; break;
+            case "Out/2019": x = 9; break;
+            case "Nov/2019": x = 10; break;
+            case "Dez/2019": x = 11; break;
+
+            default:
+                break;
+        }
+
+        if (dadosT.rows[x].length == 2)
+            dadosT.rows[x].push(valorD);
+        else if (dadosT.rows[x].length == 3) {
+            for (j = 2; j < dadosT.rows[x].length; j++)
+                valD = parseFloat(dadosT.rows[x][j]);
+            valD += valorD;
+            dadosT.rows[x][2] = valD;
+        }
+        else if (dadosT.rows[x].length == 1) {
+            dadosT.rows[x].push('N/A');
+            dadosT.rows[x].push(valorD);
+        }
+    }
+
+    var diferenca;
+    var d = new Date();
+    var n = d.getMonth();
+    document.getElementById("texto").innerHTML = "";
+    if (dadosT.rows[n].length == 3) {
+        if (dadosT.rows[n][1] == 'N/A') {
+            document.getElementById("diferenca").innerHTML = 'Não há dados de receita registrados para o mês atual. Adicione sua receita para obter o saldo mensal.';
+        }
+        else {
+            diferenca = dadosT.rows[n][1] - dadosT.rows[n][2];
+            if (diferenca <0)
+                document.getElementById("box-diferenca").style.backgroundColor = "red";
+            if (diferenca >0)
+                document.getElementById("box-diferenca").style.backgroundColor = "green";
+            document.getElementById("diferenca").innerHTML = diferenca;
+            document.getElementById("texto").innerHTML = "Saldo disponível no mês atual: R$ ";
+        }
+    }
+    else if (dadosT.rows[n].length == 2) {
+        document.getElementById("diferenca").innerHTML = 'Não há dados de despesas registrados para o mês atual. Adicione suas despesas para obter o saldo mensal.';
+    }
+    else if (dadosT.rows[n].length == 1) {
+        document.getElementById("diferenca").innerHTML = 'Nenhum dado financeiro foi disponibilizado para o mês atual.';
+    }
 
 
-  //DEFINE O TIPO DE GRÁFICO
-  chart = anychart.column();
-    
-  // create a column series and set the data
-  var series1 = chart.column(dadosT);
-  var series2 = chart.column(dadosT2);
-  
-  // configure the visual settings of the first series
-  series1.normal().fill("#5CD65C");
-  series1.hovered().fill("#87D387");
-  series1.selected().fill("#87D387");
+    //FIM DO SCRIPT PRÓPRIO
 
-  series2.normal().fill("#DE4D44");
-  series2.hovered().fill("#FF948E");
-  series2.selected().fill("#FF948E");
-  series2.normal().stroke("#BF332B");
-  series2.hovered().stroke("#DE4D44");
-  series2.selected().stroke("#DE4D44");
+    // create column chart
+    var chart = anychart.column();
 
-  //DEFINE O TIPO DE BORDA DO GRÁFICO, SUA COR E ESPAÇAMENTO
-  var background = chart.background();
-  background.stroke({color: "#282828", dash: "10", thickness: 1});
-  background.cornerType("round");
-  background.corners(15, 15, 15, 15);
-  
-  // espaçamento entre barras
-  chart.barsPadding(-2);
-  chart.barGroupsPadding(2);
-  
-  //TÍTULO DO GRÁFICO
-  chart.title("Comparação entre receita e despesas");
-    
-    // set the container id
-    chart.container("grafico4");
-    
-    // initiate drawing the chart
+    // set chart data
+    chart.data(dadosT);
+
+    // turn on chart animation
+    chart.animation(true);
+
+    chart.yAxis().labels().format('R${%Value}');
+
+    chart.labels()
+        .enabled(true)
+        .position('center-top')
+        .anchor('center-bottom')
+        .fontSize(16)
+        .format('R${%Value}');
+    chart.hovered().labels(false);
+
+    // turn on legend and tune it
+    chart.legend()
+        .enabled(true)
+        .fontSize(20)
+        .padding([0, 0, 20, 0]);
+
+    // interactivity settings and tooltip position
+    chart.interactivity().hoverMode('single');
+
+    chart.tooltip()
+        .positionMode('point')
+        .position('center-top')
+        .anchor('center-bottom')
+        .offsetX(0)
+        .offsetY(5)
+        .titleFormat('{%X}')
+        .fontSize(20)
+        .format('{%SeriesName} : R${%Value}');
+
+    var title = chart.title();
+    title.fontSize(30);
+
+    // set container id for the chart
+    chart.container('grafico3');
+
+    // initiate chart drawing
     chart.draw();
-  });
+
+    //DEFINE O TIPO DE BORDA DO GRÁFICO, SUA COR E ESPAÇAMENTO
+    var background = chart.background();
+    background.stroke({ color: "#282828", dash: "10", thickness: 1 });
+    background.cornerType("round");
+    background.corners(15, 15, 15, 15);
+
+    var count = 0
+    for (i = 0; i < dadosT.rows.length; i++) {
+        if (dadosT.rows[i].length == 1) {
+            count++;
+        }
+        else {
+            break;
+        }
+    }
+    if (count == 12) {
+        document.getElementById("grafico3").style.display = "none";
+        document.getElementById("grafico3_alt").style.display = "block";
+    }
+
+
+});

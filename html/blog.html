@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+        href="https://fonts.googleapis.com/css?family=Oswald|Saira+Semi+Condensed|Russo+One|Titillium+Web&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <!--LINKS REFERENCIAIS PARA A CRIAÇÃO DE GRÁFICOS EM JAVASCRIPT-->
+    <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-cartesian.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-linear-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/themes/light_provence.min.js"></script>
+    <!--FIM DOS LINKS REFERENCIAIS-->
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jss/dbfake.js"></script>
+
+    <title>Economize</title>
+</head>
+
+
+
+
+
+<body>
+
+    <header>
+
+        <div class="cabecalho">
+            <div class="titulo2">
+                <img class="logo" src="/imagens/logo.png" height="65px" alt="">
+                <h1 class="titulo">Economize</h1>
+            </div>
+            <ul>
+                <li><a href="paginaprincipal.html">HOME</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+            </ul>
+            <div>
+
+                <p class="logout"><a href="index.html">Logout</a></p>
+
+                <div class="usuario">
+                    <img src="/imagens/perfil.jpg" style="border-radius: 10px" height="60px" alt="">
+                    <p>Bem-vindo, Usuário</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <input type="checkbox" id="check">
+        <label id="icone" for="check"><img src="/imagens/icone.png"></label>
+        <div class="barra">
+            <nav>
+                <a href="receitas.html">
+                    <div class="link">Receita</div>
+                </a>
+                <a href="despesas.html">
+                    <div class="link">Despesas</div>
+                </a>
+            </nav>
+
+        </div>
+
+        <h2>Blog</h2>
+
+        <div id="lista-produtos"></div>
+        <div id="lista-produtos2"></div>
+        <div id="lista-produtos3"></div>
+        <div id="lista-produtos4"></div>
+        <div id="lista-produtos5"></div>
+
+
+
+
+
+
+        <footer>
+            <div class="rodape">
+                <p>Copyright (C) 2019 Economize<br>All rights reserved</p>
+            </div>
+        </footer>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var prods = '';
+        for (i = 0; i < db.dados.length; i++) {
+            prods += `<div class="uniao1"><u><h3 class="produto-item" text-align: "center";> ${db.dados[i].titulo} <br><br> <a href="index2.html"><img class="img1" width="700px" border= "1px black solid"; src="${db.dados[i].imagem}"></a></h3></u> <p>${db.dados[i].inf}</p> </div>`;
+        }
+        document.getElementById('lista-produtos').innerHTML = prods;
+    </script>
+
+    <script>
+        var prodss = '';
+        for (i = 0; i < dbb.dados.length; i++) {
+            prodss += `<div class="uniao2"><u><h3 class="produto-item2" text-align: "center";> ${dbb.dados[i].titulo} <br><br> <a href="index2.html"><img class="img2" width="700px" border= "1px black solid"; src="${dbb.dados[i].imagem}"></a></h3></u> <p>${dbb.dados[i].inf}</p> </div>`;
+        }
+        document.getElementById('lista-produtos2').innerHTML = prodss;
+    </script>
+
+    <script>
+        var prodsss = '';
+        for (i = 0; i < dbbb.dados.length; i++) {
+            prodsss += `<div class="uniao3"><u><h3 class="produto-item3" text-align: "center";> ${dbbb.dados[i].titulo} <br><br> <a href="index2.html"><img class="img3" width="700px" border= "1px black solid"; src="${dbbb.dados[i].imagem}"></a></h3></u> <p>${dbbb.dados[i].inf}</p> </div>`;
+        }
+        document.getElementById('lista-produtos3').innerHTML = prodsss;
+    </script>
+
+    <script>
+        var prodssss = '';
+        for (i = 0; i < dbbbb.dados.length; i++) {
+            prodssss += `<div class="uniao4"><u><h3 class="produto-item4" text-align: "center";> ${dbbbb.dados[i].titulo} <br><br> <a href="index2.html"><img class="img4" width="700px" border= "1px black solid"; src="${dbbbb.dados[i].imagem}"></a></h3></u> <p>${dbbbb.dados[i].inf}</p> </div>`;
+        }
+        document.getElementById('lista-produtos4').innerHTML = prodssss;
+    </script>
+    <script>
+        var prodsssss = '';
+        for (i = 0; i < dbbbbb.dados.length; i++) {
+            prodsssss += `<div class="uniao4"><u><h3 class="produto-item5" text-align: "center";> ${dbbbbb.dados[i].titulo} <br><br> <a href="index2.html"><img class="img5" width="700px" border= "1px black solid"; src="${dbbbbb.dados[i].imagem}"></a></h3></u> <p>${dbbbbb.dados[i].inf}</p> </div>`;
+        }
+        document.getElementById('lista-produtos5').innerHTML = prodsssss;
+    </script>
+
+
+
+
+
+
+</body>
+
+
+</html>

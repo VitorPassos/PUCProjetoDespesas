@@ -8,7 +8,6 @@ body{ /* removendo o espaço padrao do navegador */
 }
 header{
     color: white;
-    
 }
 
 .cabecalho{
@@ -35,7 +34,6 @@ header{
 ul{
     list-style-type: none;
     float: left;
- 
     }
     ul li{
         float: left;
@@ -52,7 +50,7 @@ ul{
         font-family: 'Titillium Web', sans-serif;
         font-size: 32px;
         color: white;
-        margin-top: 22px;
+        margin-top: 32px;
         text-decoration: none;
        
     }

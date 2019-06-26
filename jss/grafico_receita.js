@@ -16,6 +16,9 @@ anychart.onDocumentReady(function(){
     ]; */
   
   // Monta a estrutura de dados a ser exibida no gráfico
+
+  document.getElementById("grafico1_alt").style.display = "none";
+
   for (i = 0; i < receitas.dadosReceitas.length; i++) {
     let cat = receitas.dadosReceitas[i].categoria;
     let valor = parseFloat (receitas.dadosReceitas[i].valor);
@@ -72,6 +75,11 @@ anychart.onDocumentReady(function(){
               dadosAT.push ({x: cat, value: valor});
       }
   }
+
+  if (dadosAT.length == 0) {
+    document.getElementById("grafico1").style.display = "none";
+    document.getElementById("grafico1_alt").style.display = "block";
+  }
   
 
 
@@ -99,38 +107,16 @@ anychart.onDocumentReady(function(){
   chart.title("Receita do mês atual");
     
   // set the container id
-  chart.container("grafico3");
+  chart.container("grafico1");
     
   // initiate drawing the chart
   chart.draw();
 
-  // set rendering settings
-  series1.rendering().point(drawer);
-  });
+  //DEFINE O TIPO DE BORDA DO GRÁFICO, SUA COR E ESPAÇAMENTO
+  var background = chart.background();
+  background.stroke({color: "#282828", dash: "10", thickness: 1});
+  background.cornerType("round");
+  background.corners(15, 15, 15, 15);
 
-  function drawer() {
-    // if missing (not correct data), then skipping this point drawing
-    if (this.missing) {
-  return;
-    }
-  
-    // get shapes group
-    var shapes = this.shapes || this.getShapesGroup(this.pointState);
-    // calculate the left value of the x-axis
-    var leftX = this.x - this.pointWidth / 2;
-    // calculate the right value of the x-axis
-    var rightX = leftX + this.pointWidth;
-    // calculate the half of point width
-    var rx = this.pointWidth / 2;
-  
-    shapes['path']
-    // resets all 'line' operations
-    .clear()
-    // draw column with rounded edges
-    .moveTo(leftX, this.zero)
-    .lineTo(leftX, this.value + rx)
-    .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
-    .lineTo(rightX, this.zero)
-    // close by connecting the last point with the first straight line
-    .close();
-  }
+
+  });

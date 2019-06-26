@@ -1,0 +1,458 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+ 
+    
+    header{
+        color: white;   
+    }
+    
+    .cabecalho{
+     background-color: #008359;
+     height: 100px;
+     width: 100%;
+     margin: 0 auto;
+     border-bottom: #1e4c97 8px solid;
+    }
+    .logo{
+        float: left;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .titulo{
+        font-family: 'Oswald', sans-serif;
+        float: left;
+        margin-left: 40px;
+        font-size: 50px;
+        margin-top: 4px;
+        cursor: default
+    }
+    
+    ul{
+    list-style-type: none;
+    float: left;
+    margin-left: 120px;
+    margin-top: 20px;
+    }
+    ul li{
+        float: left;
+        margin-right: 90px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 32px;
+       
+    }
+    ul a{
+        float: left;
+        font-family: 'Titillium Web', sans-serif;
+        font-family: 'Oswald', sans-serif;
+       color: white;
+        text-decoration: none;
+       
+    }
+    ul li:hover{
+        cursor: pointer;
+        color: #1738a1;
+        border-bottom: 1px #1738a1 solid;
+    }
+    ul li a:hover{
+        cursor: pointer;
+        color: #1738a1;
+        border-bottom: 1px #1738a1 solid;
+    }
+    .usuario{
+        float: right;
+        font-family: 'Oswald',sans-serif;
+        margin-right: 150px;
+        margin-top: 13px;
+    }
+    .usuario p{
+        float: right;
+        padding-left: 8px;
+        margin-top: 5px;
+        font-size: 30px;
+        font-family: 'Saira Semi Condensed', sans-serif;
+        font-weight: bold;
+        cursor: default
+    }
+    .logout{
+        float: right;
+        margin-right: 50px;
+        margin-top: 14px;
+        font-family: 'Saira Semi Condensed', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .logout a{
+        text-decoration: none;
+        color: white;
+    }
+    .logout a:hover{
+        cursor: pointer;
+        color: #be4242;
+    }
+    .titulo2{
+        margin-left: 10px;
+        float:left;
+    }
+    .nav > ul > li{ /* posicionando a nav */
+        margin-left: 120px;
+          padding: 8px;
+          display: inline-block;
+      color: white;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          font-size: 20px;
+          float:left;
+          border-right: 1px solid black;
+    }
+    .nav > ul > li:hover{
+        color: #1e4c97;
+    }
+    .nav > ul > li a:hover{
+        color: #1e4c97
+    }
+    #check{
+        margin-top: 40px;
+        display: none;
+        float:left;
+    }
+    
+    #icone{
+        cursor: pointer;
+        padding: 15px;
+        position: absolute;
+        z-index: 1;
+        float:left;
+    }
+    .barra{
+        background-color: #008359;
+        height: 100%;
+        width: 420px;
+        position: absolute;
+        border-right: 1px solid black;
+        transition: all .2s linear;
+        left: -420px;
+        float:left; 
+    }
+    .barra nav{
+        width: 100%;
+        position: absolute;
+        top: 60px;
+    }
+    nav a{
+        text-decoration: none;
+        color: white;
+    }
+    .link{
+        background-color: white;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        transition: all .2s linear;
+        color: black;
+        border-bottom: 1px solid #222;
+        text-align: center;
+        
+    }
+    .link:hover{
+        background-color: #cc403f;
+    }
+    
+    #check:checked ~ .barra{
+    transform: translateX(420px);
+    }
+    
+  
+    .rodape{
+       
+        width: 100%;
+        margin-top: 200px;
+        height: 150px;
+        float: left;
+        background-color: #353535;
+    }
+    .rodape p{
+        color: white;
+        text-align: center;
+        font-family: 'Saira Semi Condensed', sans-serif;
+        margin-top: 40px;
+        margin-left: 280px;
+        font-size: 25px;
+    }
+    h2{
+        font-family: 'Russo One',sans-serif;
+        margin-left: 50%;
+        font-size: 40px;
+        margin-top: 30px;
+        float: left;
+    }
+    #lista-produtos{
+        right: 1400px;
+        top: 220px;
+        position: absolute;
+       
+    }
+    .produto-item{
+        font-size: 28px;
+        color: black;
+        font-family: 'Oswald',sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+      
+    }
+    .img1{
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 2px  black;
+        border: black;
+        margin-top: -20px;
+    }
+    .uniao1 {
+        width: 800px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(240, 230, 230);
+        padding: 10px 50px 10px 50px;
+    }
+    .uniao1 p{
+       text-align: center;
+       text-align: justify;
+    }
+
+    #lista-produtos2{
+        right: 400px;
+        top: 220px;
+        position: absolute;
+       
+    }
+    .produto-item2{
+        font-size: 28px;
+        color: black;
+        font-family: 'Oswald',sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+        
+        
+      
+    }
+    .img2{
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 2px  black;
+        border: black;
+        margin-top: -20px;
+    }
+    .uniao2 {
+        width: 800px;
+        height: 1110px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(240, 230, 230);
+        padding: 10px 50px 10px 50px;
+    }
+    .uniao2 p{
+       text-align: center;
+       text-align: justify;
+    }
+    
+    #lista-produtos3{
+        right: 1400px;
+        top: 1380px;
+        position: absolute;
+       
+    }
+    .produto-item3{
+        font-size: 28px;
+        color: black;
+        font-family: 'Oswald',sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+        
+        
+      
+    }
+    .img3{
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 2px  black;
+        border: black;
+        margin-top: -20px;
+    }
+    .uniao3 {
+        width: 800px;
+        height: 1110px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(240, 230, 230);
+        padding: 10px 50px 10px 50px;
+    }
+    .uniao3 p{
+       text-align: center;
+       text-align: justify;
+    }
+    
+    
+    #lista-produtos4{
+        right: 400px;
+        top: 1380px;
+        position: absolute;
+       
+    }
+    .produto-item4{
+        font-size: 28px;
+        color: black;
+        font-family: 'Oswald',sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+        
+        
+      
+    }
+    .img4{
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 2px  black;
+        border: black;
+        margin-top: -20px;
+    }
+    .uniao4 {
+        width: 800px;
+        height: 1110px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(240, 230, 230);
+        padding: 10px 50px 10px 50px;
+    }
+    .uniao4 p{
+       text-align: center;
+       text-align: justify;
+    }
+   
+      
+    #lista-produtos5{
+        left: 1000px;
+        top: 2540px;
+        position: absolute;
+       
+    }
+    .produto-item5{
+        font-size: 28px;
+        color: black;
+        font-family: 'Oswald',sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+        
+        
+      
+    }
+    .img5{
+        border-radius: 20px;
+        box-shadow: 2px 2px 2px 2px  black;
+        border: black;
+        margin-top: -20px;
+    }
+    .uniao5 {
+        width: 800px;
+        height: 1110px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(240, 230, 230);
+        padding: 10px 50px 10px 50px;
+    }
+    .uniao5 p{
+       text-align: center;
+       text-align: justify;
+    }
+    
+    
+    .rodape{
+   
+        width: 100%;
+        margin-top: 3600px;
+        height: 150px;
+        float: left;
+        background-color: #353535;
+    }
+    .rodape p{
+        color: white;
+        text-align: center;
+        font-family: 'Saira Semi Condensed', sans-serif;
+        margin-top: 40px;
+        margin-left: 280px;
+        font-size: 25px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,21 +1,99 @@
 *{
-    margin: 0;
-    padding: 0;
+padding: 0;
+margin: 0;
+box-sizing: border-box;
 }
-body{ /* removendo o espaço padrao do navegador */
-    margin: 0px;
-    padding: 0px;
+
+header{
+    color: white;   
 }
-.cabecalho{ /*cor do cabeçalho e tamanho */
-    height: 50px;
-    background-color: #008359;
-    margin: 0;
-    border-bottom: 5px solid #1e4c97;
+
+.cabecalho{
+ background-color: #008359;
+ height: 100px;
+ width: 100%;
+ margin: 0 auto;
+ border-bottom: #1e4c97 8px solid;
 }
-.cabecalhoint{   /* delimitando tamanho do cabeçalho do site e colocando no meio*/
-    margin: 0 auto;
-    max-width: 1366px;
-    height: 50px;
+.logo{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.titulo{
+    font-family: 'Oswald', sans-serif;
+    float: left;
+    margin-left: 40px;
+    font-size: 50px;
+    margin-top: 4px;
+    cursor: default
+}
+
+ul{
+list-style-type: none;
+float: left;
+margin-left: 120px;
+margin-top: 20px;
+}
+ul li{
+    float: left;
+    margin-right: 90px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 32px;
+   
+}
+ul a{
+    float: left;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Oswald', sans-serif;
+   color: white;
+    text-decoration: none;
+   
+}
+ul li:hover{
+    cursor: pointer;
+    color: #1738a1;
+    border-bottom: 1px #1738a1 solid;
+}
+ul li a:hover{
+    cursor: pointer;
+    color: #1738a1;
+    border-bottom: 1px #1738a1 solid;
+}
+.usuario{
+    float: right;
+    font-family: 'Oswald',sans-serif;
+    margin-right: 150px;
+    margin-top: 13px;
+}
+.usuario p{
+    float: right;
+    padding-left: 8px;
+    margin-top: 5px;
+    font-size: 30px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: bold;
+    cursor: default
+}
+.logout{
+    float: right;
+    margin-right: 50px;
+    margin-top: 14px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+.logout a{
+    text-decoration: none;
+    color: white;
+}
+.logout a:hover{
+    cursor: pointer;
+    color: #be4242;
+}
+.titulo2{
+    margin-left: 10px;
+    float:left;
 }
 .nav > ul > li{ /* posicionando a nav */
     margin-left: 120px;
@@ -24,6 +102,8 @@ body{ /* removendo o espaço padrao do navegador */
   color: white;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: 20px;
+      float:left;
+      border-right: 1px solid black;
 }
 .nav > ul > li:hover{
     color: #1e4c97;
@@ -31,42 +111,10 @@ body{ /* removendo o espaço padrao do navegador */
 .nav > ul > li a:hover{
     color: #1e4c97
 }
-ul{
-    margin-top: -13px; 
-    margin-left: 100px;
-   
-}
-.usuario{
-    float: right;
-    margin-top: -45px;
-    height: 50px;
-    width: 320px;
-}
-.perfil{
-    margin-top: 5px;
-    float: left;
-    border-radius: 10px;
-}
-.nome{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: block;
-    float: left;
-    color: white;
-    margin-top: 15px;
-    margin-left: 5px;
-    font-size: 15px;
-}
-.logout{
-    float: right;
-    font-size: 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    margin-top:14px;
-    margin-right: 35px; 
-}
 #check{
     margin-top: 40px;
     display: none;
+    float:left;
 }
 
 #icone{
@@ -74,28 +122,18 @@ ul{
     padding: 15px;
     position: absolute;
     z-index: 1;
+    float:left;
 }
 .barra{
     background-color: #008359;
-    height: 100%;
-    width: 300px;
+    min-height: 100%;
+    height: 101%;
+    width: 420px;
     position: absolute;
     border-right: 1px solid black;
     transition: all .2s linear;
-    left: -300px;
-}
-.logo{
-    position: absolute;
-    left: 20px;
-    top: 8px;
-}
-.titulo{
-    position: absolute;
-    color: white; 
-    left: 80px;
-    font-family: 'arial';
-    font-weight: bold;
-    font-size: 20px;
+    left: -420px;
+    float:left; 
 }
 .barra nav{
     width: 100%;
@@ -110,73 +148,219 @@ nav a{
     background-color: white;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 22px;
     transition: all .2s linear;
     color: black;
-    border-bottom: 2px solid #222;
+    border-bottom: 1px solid #222;
     text-align: center;
+    
 }
 .link:hover{
     background-color: #cc403f;
 }
 
 #check:checked ~ .barra{
-transform: translateX(300px);
+transform: translateX(420px);
 }
-
 
 #grafico1 {
-    margin-left: 280px;
-    width: 500px;
-    height: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    border-right: 8px solid #1e4c97;
-    padding-left: 50px;
+    
+    width: 800px;
+    height: 400px;
+    padding-top: 000px;
+    margin-left: 600px;
+    margin-top: 200px;
+    float: left;
+    padding-bottom: 000px;
     padding-right: 150px;
 }
-
+#grafico1_alt {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-left: 450px;
+    background-color: rgb(200, 230, 200);
+    width: 800px;
+    height: 240px;
+    padding-top: 160px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+   margin-top: 220px;
+   float: left;
+   box-shadow: 4px 4px 4px; 
+}
+#grafico1_alt h3{
+    margin-top: -80px;
+}
 #grafico2 {
-    margin-left: 1250px;
-    margin-top: -550px;
-    height: 557px;
-    padding-right: 28px;
-    padding-top: 100px;
+   
+    margin-left: 1700px;
+    margin-top: -400px;
+    height: 400px;
+    width: 400px;
+    padding-right: 00px;
+    padding-top: 00px;
+    float: left;
+}
+#grafico2_alt {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-left: 450px;
+    background-color: rgb(200, 230, 200);
+    width: 800px;
+    height: 240px;
+    padding-top: 160px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+   margin-top: 220px;
+   float: left;
+   box-shadow: 4px 4px 4px; 
+}
+#grafico2_alt h3 {
+ margin-top: -70px;
 }
 #grafico3 {
+    display: block;
+    margin-left: 600px;
+    margin-top: 220px;
+    float: left;
+}
+#grafico3_alt {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-left: 450px;
+    background-color: rgb(200, 230, 200);
+    width: 800px;
+    height: 240px;
+    padding-top: 160px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+   margin-top: 350px;
+   float: left;
+   box-shadow: 4px 4px 4px; 
+}
+#grafico3_alt h3{
+    margin-top: -80px;
+ }
+
+#grafico4_alt h3 {
+   margin-top: -80px;
+}
+.rodape{
+   
+    width: 100%;
+    margin-top: 200px;
+    height: 150px;
+    float: left;
+    background-color: #353535;
+}
+.rodape p{
+    color: white;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    margin-top: 40px;
     margin-left: 280px;
-    width: 500px;
-    height: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    border-right: 8px solid #1e4c97;
-    padding-left: 50px;
-    padding-right: 150px;
+    font-size: 25px;
+}
+#texto{
+    font-size: 27px;
+  
+}
+#box-diferenca{
+    margin-top: 20px;
+    background-color: rgb(160, 137, 105);
+    border-radius: 20px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    box-shadow: 4px 4px 4px black;
+    color: white;
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    float: left;
+    font-size: 24px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    margin-left: 43%;
+
 }
 
-#grafico4 {
-    margin-left: 1250px;
-    margin-bottom: 55px;
-    margin-top: -555px;
-    height: 557px;
-    padding-right: 28px;
-    padding-top: 100px;
-}
-.footer{
-    background-color: #008359;
-    border-top: 5px solid #1e4c97;
-    height: 80px;
-   
-}
-.footerint{
-    max-width: 1000px;
-    padding-top: 10px;
-    line-height: 30px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
