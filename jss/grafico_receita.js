@@ -105,6 +105,9 @@ anychart.onDocumentReady(function(){
   
   //TÍTULO DO GRÁFICO
   chart.title("Receita do mês atual");
+  
+  var title = chart.title();
+    title.fontSize(30);
     
   // set the container id
   chart.container("grafico1");
